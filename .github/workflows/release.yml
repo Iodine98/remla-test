@@ -9,6 +9,6 @@ jobs:
               run: echo "${{ secrets.GH_TOKEN }}" | docker login ghcr.io -u $ --password-stdin
             - name: Build and Push Docker Image
               run: |
-                  IMG=ghcr.io/${{ github.repository }}
+                  IMG=ghcr.io/iodine98/remla-test
                   docker build --tag $IMG:latest .
                   docker push --all-tags $IMG
